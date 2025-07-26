@@ -64,6 +64,46 @@ cat << 'EOF' > index.html
             background: linear-gradient(135deg, #1E1A4A 0%, #1B0F4F 100%);
         }
         
+        /* CASINO BACKGROUND ANIMATIONS */
+        .casino-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at center, 
+                rgba(255, 215, 0, 0.1) 0%, 
+                rgba(255, 165, 0, 0.05) 30%, 
+                transparent 70%);
+            animation: casino-pulse 4s ease-in-out infinite;
+        }
+        
+        .money-rain {
+            position: fixed;
+            top: -100px;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .money-bill {
+            position: absolute;
+            font-size: 24px;
+            animation: money-fall 8s linear infinite;
+            opacity: 0.6;
+        }
+        
+        .diamond-sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2;
+            color: #FFD700;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+        
+        /* EPIC ROULETTE WHEEL BACKGROUND */
         .roulette-background {
             position: fixed;
             top: 50%;
@@ -115,6 +155,68 @@ cat << 'EOF' > index.html
                 0 0 100px rgba(255, 215, 0, 0.2);
         }
         
+        .roulette-wheel-bg::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            bottom: 10%;
+            border-radius: 50%;
+            background: conic-gradient(
+                transparent 0deg 5deg,
+                rgba(255, 215, 0, 0.3) 5deg 10deg,
+                transparent 10deg 20deg,
+                rgba(255, 215, 0, 0.3) 20deg 25deg,
+                transparent 25deg 35deg,
+                rgba(255, 215, 0, 0.3) 35deg 40deg,
+                transparent 40deg 50deg,
+                rgba(255, 215, 0, 0.3) 50deg 55deg,
+                transparent 55deg 65deg,
+                rgba(255, 215, 0, 0.3) 65deg 70deg,
+                transparent 70deg 80deg,
+                rgba(255, 215, 0, 0.3) 80deg 85deg,
+                transparent 85deg 95deg,
+                rgba(255, 215, 0, 0.3) 95deg 100deg,
+                transparent 100deg 110deg,
+                rgba(255, 215, 0, 0.3) 110deg 115deg,
+                transparent 115deg 125deg,
+                rgba(255, 215, 0, 0.3) 125deg 130deg,
+                transparent 130deg 140deg,
+                rgba(255, 215, 0, 0.3) 140deg 145deg,
+                transparent 145deg 155deg,
+                rgba(255, 215, 0, 0.3) 155deg 160deg,
+                transparent 160deg 170deg,
+                rgba(255, 215, 0, 0.3) 170deg 175deg,
+                transparent 175deg 185deg,
+                rgba(255, 215, 0, 0.3) 185deg 190deg,
+                transparent 190deg 200deg,
+                rgba(255, 215, 0, 0.3) 200deg 205deg,
+                transparent 205deg 215deg,
+                rgba(255, 215, 0, 0.3) 215deg 220deg,
+                transparent 220deg 230deg,
+                rgba(255, 215, 0, 0.3) 230deg 235deg,
+                transparent 235deg 245deg,
+                rgba(255, 215, 0, 0.3) 245deg 250deg,
+                transparent 250deg 260deg,
+                rgba(255, 215, 0, 0.3) 260deg 265deg,
+                transparent 265deg 275deg,
+                rgba(255, 215, 0, 0.3) 275deg 280deg,
+                transparent 280deg 290deg,
+                rgba(255, 215, 0, 0.3) 290deg 295deg,
+                transparent 295deg 305deg,
+                rgba(255, 215, 0, 0.3) 305deg 310deg,
+                transparent 310deg 320deg,
+                rgba(255, 215, 0, 0.3) 320deg 325deg,
+                transparent 325deg 335deg,
+                rgba(255, 215, 0, 0.3) 335deg 340deg,
+                transparent 340deg 350deg,
+                rgba(255, 215, 0, 0.3) 350deg 355deg,
+                transparent 355deg 360deg
+            );
+            animation: roulette-background-spin-reverse 15s linear infinite;
+        }
+        
         .roulette-center-bg {
             position: absolute;
             top: 50%;
@@ -134,6 +236,7 @@ cat << 'EOF' > index.html
             animation: roulette-center-pulse 3s ease-in-out infinite;
         }
         
+        /* SMALLER FOREGROUND ROULETTE */
         .roulette-container {
             position: relative;
             display: inline-block;
@@ -179,6 +282,68 @@ cat << 'EOF' > index.html
             position: relative;
         }
         
+        .roulette-wheel::before {
+            content: '';
+            position: absolute;
+            top: 8%;
+            left: 8%;
+            right: 8%;
+            bottom: 8%;
+            border-radius: 50%;
+            background: conic-gradient(
+                transparent 0deg 7.5deg,
+                rgba(255, 215, 0, 0.6) 7.5deg,
+                transparent 7.5deg 22.5deg,
+                rgba(255, 215, 0, 0.6) 22.5deg,
+                transparent 22.5deg 37.5deg,
+                rgba(255, 215, 0, 0.6) 37.5deg,
+                transparent 37.5deg 52.5deg,
+                rgba(255, 215, 0, 0.6) 52.5deg,
+                transparent 52.5deg 67.5deg,
+                rgba(255, 215, 0, 0.6) 67.5deg,
+                transparent 67.5deg 82.5deg,
+                rgba(255, 215, 0, 0.6) 82.5deg,
+                transparent 82.5deg 97.5deg,
+                rgba(255, 215, 0, 0.6) 97.5deg,
+                transparent 97.5deg 112.5deg,
+                rgba(255, 215, 0, 0.6) 112.5deg,
+                transparent 112.5deg 127.5deg,
+                rgba(255, 215, 0, 0.6) 127.5deg,
+                transparent 127.5deg 142.5deg,
+                rgba(255, 215, 0, 0.6) 142.5deg,
+                transparent 142.5deg 157.5deg,
+                rgba(255, 215, 0, 0.6) 157.5deg,
+                transparent 157.5deg 172.5deg,
+                rgba(255, 215, 0, 0.6) 172.5deg,
+                transparent 172.5deg 187.5deg,
+                rgba(255, 215, 0, 0.6) 187.5deg,
+                transparent 187.5deg 202.5deg,
+                rgba(255, 215, 0, 0.6) 202.5deg,
+                transparent 202.5deg 217.5deg,
+                rgba(255, 215, 0, 0.6) 217.5deg,
+                transparent 217.5deg 232.5deg,
+                rgba(255, 215, 0, 0.6) 232.5deg,
+                transparent 232.5deg 247.5deg,
+                rgba(255, 215, 0, 0.6) 247.5deg,
+                transparent 247.5deg 262.5deg,
+                rgba(255, 215, 0, 0.6) 262.5deg,
+                transparent 262.5deg 277.5deg,
+                rgba(255, 215, 0, 0.6) 277.5deg,
+                transparent 277.5deg 292.5deg,
+                rgba(255, 215, 0, 0.6) 292.5deg,
+                transparent 292.5deg 307.5deg,
+                rgba(255, 215, 0, 0.6) 307.5deg,
+                transparent 307.5deg 322.5deg,
+                rgba(255, 215, 0, 0.6) 322.5deg,
+                transparent 322.5deg 337.5deg,
+                rgba(255, 215, 0, 0.6) 337.5deg,
+                transparent 337.5deg 352.5deg,
+                rgba(255, 215, 0, 0.6) 352.5deg,
+                transparent 352.5deg 360deg
+            );
+            animation: roulette-spin-reverse 4s linear infinite;
+        }
+        
         .roulette-center {
             position: absolute;
             top: 50%;
@@ -214,6 +379,174 @@ cat << 'EOF' > index.html
             animation: pointer-glow 1.5s ease-in-out infinite alternate;
         }
         
+        /* LUXURY CAROUSEL */
+        .luxury-carousel {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: luxury-scroll 20s linear infinite;
+        }
+        
+        .luxury-item {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 40px;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: luxury-glow 3s ease-in-out infinite;
+        }
+        
+        /* FIREWORKS */
+        .firework {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .firework::before {
+            content: '✨';
+            position: absolute;
+            animation: firework-explode 1s ease-out;
+            font-size: 30px;
+        }
+        
+        /* COIN RAIN */
+        .coin {
+            position: fixed;
+            font-size: 20px;
+            color: #FFD700;
+            animation: coin-fall 3s linear infinite;
+            pointer-events: none;
+            z-index: 3;
+        }
+        
+        /* SLOT MACHINE EFFECT */
+        .slot-machine {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: bold;
+            animation: slot-blink 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* JACKPOT EFFECT */
+        .jackpot-text {
+            background: linear-gradient(45deg, #FFD700, #FF6B6B, #4ECDC4, #45B7D1, #FFD700);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: jackpot-rainbow 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+        }
+        
+        /* ORIGINAL ANIMATIONS */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            to { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes scaleUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* NEW CASINO ANIMATIONS */
+        @keyframes casino-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+        
+        @keyframes money-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+        }
+        
+        @keyframes roulette-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes roulette-background-spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        @keyframes roulette-background-spin-reverse {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+        
+        @keyframes roulette-spin-reverse {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+        
+        @keyframes roulette-center-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+            50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(255, 215, 0, 1); }
+        }
+        
+        @keyframes pointer-glow {
+            0% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 1)); }
+            100% { filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1)) drop-shadow(0 0 35px rgba(255, 69, 0, 0.5)); }
+        }
+        
+        @keyframes luxury-scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        
+        @keyframes luxury-glow {
+            0%, 100% { text-shadow: 0 0 10px currentColor; }
+            50% { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+        }
+        
+        @keyframes firework-explode {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(3) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes coin-fall {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(1080deg); opacity: 0; }
+        }
+        
+        @keyframes slot-blink {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 69, 0, 0.5); }
+        }
+        
+        @keyframes jackpot-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* RESPONSIVE */
         .number-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
@@ -270,51 +603,46 @@ cat << 'EOF' > index.html
             backdrop-filter: blur(4px);
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        @media (max-width: 640px) {
+            .number-grid {
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+                gap: 6px;
+            }
+            .roulette-wheel {
+                width: 150px;
+                height: 150px;
+            }
+            .luxury-item {
+                font-size: 1.5rem;
+                margin: 0 20px;
+            }
         }
         
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-            to { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            animation: confetti-fall 3s linear infinite;
         }
         
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
         
-        @keyframes scaleUp {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        .filter-btn.active {
+            opacity: 1 !important;
+            transform: scale(1.05);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes roulette-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes roulette-background-spin {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        
-        @keyframes roulette-center-pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
-            50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(255, 215, 0, 1); }
-        }
-        
-        @keyframes pointer-glow {
-            0% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 1)); }
-            100% { filter: drop-shadow(0 0 25px rgba(255, 215, 0, 1)) drop-shadow(0 0 35px rgba(255, 69, 0, 0.5)); }
-        }
-        
+        /* PULSING GOLD BUTTONS */
         .btn-jackpot {
             animation: btn-pulse 2s ease-in-out infinite;
             position: relative;
@@ -342,64 +670,80 @@ cat << 'EOF' > index.html
             100% { left: 100%; }
         }
         
-        .jackpot-text {
-            background: linear-gradient(45deg, #FFD700, #FF6B6B, #4ECDC4, #45B7D1, #FFD700);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: jackpot-rainbow 3s ease-in-out infinite;
+        /* EPIC LOGO ANIMATIONS */
+        .logo-container {
+            transition: all 0.3s ease;
         }
         
-        @keyframes jackpot-rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .logo-container:hover {
+            transform: scale(1.1);
         }
         
-        .slot-machine {
-            display: inline-block;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: bold;
-            animation: slot-blink 2s ease-in-out infinite;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        .logo-container:hover .logo-main {
+            transform: rotate(6deg) scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
         }
         
-        @keyframes slot-blink {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
-            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 69, 0, 0.5); }
+        .logo-main {
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 0 25px rgba(255, 215, 0, 0.6),
+                inset 0 0 15px rgba(255, 255, 255, 0.2);
         }
         
-        @media (max-width: 640px) {
-            .roulette-wheel {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .number-grid {
-                grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-                gap: 4px;
-            }
-            
-            .number-button {
-                font-size: 12px;
-            }
+        .logo-number {
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 215, 0, 0.6),
+                2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-crown {
+            animation: crown-bounce 2s ease-in-out infinite;
+        }
+        
+        .logo-sparkle {
+            animation: sparkle-twinkle 1.5s ease-in-out infinite;
+        }
+        
+        .logo-text span {
+            transition: all 0.3s ease;
+        }
+        
+        .logo-text:hover span {
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+        
+        @keyframes crown-bounce {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-2px) rotate(-5deg); }
+            50% { transform: translateY(-1px) rotate(0deg); }
+            75% { transform: translateY(-2px) rotate(5deg); }
+        }
+        
+        @keyframes sparkle-twinkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.3) rotate(180deg); opacity: 0.7; }
         }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen transition-all duration-300">
+    <!-- Header -->
     <header class="fixed top-0 w-full z-50 glass">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center animate-glow transform rotate-3 shadow-lg">
-                    <span class="text-white font-black text-2xl transform -rotate-3">1</span>
-                    <div class="absolute -top-2 -right-1 text-yellow-300 text-xs animate-pulse">👑</div>
-                    <div class="absolute -bottom-1 -left-1 text-yellow-200 text-xs animate-ping">✨</div>
+                <!-- EPIC LOGO -->
+                <div class="logo-container relative">
+                    <div class="logo-main w-12 h-12 gradient-gold rounded-xl flex items-center justify-center animate-glow transform rotate-3 shadow-lg">
+                        <div class="logo-content relative">
+                            <span class="logo-number text-white font-black text-2xl transform -rotate-3">1</span>
+                            <div class="logo-crown absolute -top-2 -right-1 text-yellow-300 text-xs animate-pulse">👑</div>
+                            <div class="logo-sparkle absolute -bottom-1 -left-1 text-yellow-200 text-xs animate-ping">✨</div>
+                        </div>
+                    </div>
+                    <div class="logo-glow absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 opacity-30 blur-md animate-pulse"></div>
                 </div>
-                <div>
+                <div class="logo-text">
                     <span class="text-2xl font-black text-gray-800 dark:text-white">
                         <span class="text-yellow-600 dark:text-yellow-400">One</span><span class="text-gray-700 dark:text-gray-300">In</span><span class="text-yellow-600 dark:text-yellow-400">A</span><span class="text-gray-700 dark:text-gray-300">Million</span><span class="text-yellow-600 dark:text-yellow-400">Wins</span>
                     </span>
@@ -419,6 +763,7 @@ cat << 'EOF' > index.html
                     <span class="hidden dark:inline">☀️</span>
                 </button>
                 
+                <!-- User Menu (shown when logged in) -->
                 <div id="user-menu" class="hidden items-center space-x-4">
                     <div class="text-sm text-gray-600 dark:text-gray-400">
                         Saldo: <span id="user-balance" class="font-bold text-green-600">$0</span>
@@ -431,6 +776,7 @@ cat << 'EOF' > index.html
                     </button>
                 </div>
                 
+                <!-- Login Button (shown when not logged in) -->
                 <button id="login-btn" class="px-4 py-2 gradient-gold text-white rounded-lg font-medium hover:scale-105 transition-transform">
                     Iniciar Sesión
                 </button>
@@ -438,14 +784,18 @@ cat << 'EOF' > index.html
         </nav>
     </header>
 
+    <!-- EPIC BACKGROUND ROULETTE -->
     <div class="roulette-background">
         <div class="roulette-wheel-bg">
             <div class="roulette-center-bg">💰</div>
         </div>
     </div>
 
+    <!-- Main Content -->
     <main class="pt-20">
+        <!-- Landing Page -->
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <!-- Animated Background -->
             <div class="absolute inset-0">
                 <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full animate-float opacity-60"></div>
                 <div class="absolute top-40 right-20 w-6 h-6 bg-yellow-500 rounded-full animate-float opacity-40" style="animation-delay: 1s;"></div>
@@ -472,6 +822,7 @@ cat << 'EOF' > index.html
                     </p>
                 </div>
 
+                <!-- Live Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 animate-scale-up" style="animation-delay: 0.3s;">
                     <div class="glass rounded-2xl p-6">
                         <div class="text-3xl font-mono font-bold text-yellow-500" id="sold-counter">487,523</div>
@@ -492,6 +843,7 @@ cat << 'EOF' > index.html
                     </div>
                 </div>
 
+                <!-- CASINO ROULETTE -->
                 <div class="animate-scale-up mb-8" style="animation-delay: 0.4s;">
                     <div class="roulette-container">
                         <div class="roulette-wheel">
@@ -507,6 +859,7 @@ cat << 'EOF' > index.html
                     </button>
                     <p class="text-sm text-gray-500 mt-2">Solo $1 por número</p>
                     
+                    <!-- JACKPOT TEXT -->
                     <div class="mt-4">
                         <div class="text-3xl font-bold jackpot-text">
                             ¡JACKPOT $1,000,000!
@@ -522,6 +875,7 @@ cat << 'EOF' > index.html
             </div>
         </section>
 
+        <!-- How It Works -->
         <section id="how-it-works" class="py-20 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
@@ -556,12 +910,14 @@ cat << 'EOF' > index.html
             </div>
         </section>
 
+        <!-- Dashboard Section -->
         <section id="dashboard" class="py-20 bg-gray-50 dark:bg-gray-900 hidden">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
                     Mi Dashboard
                 </h2>
                 
+                <!-- Dashboard Stats -->
                 <div class="grid md:grid-cols-4 gap-6 mb-12">
                     <div class="glass rounded-2xl p-6 text-center">
                         <div class="text-2xl font-bold text-blue-600" id="dashboard-numbers-owned">0</div>
@@ -581,23 +937,29 @@ cat << 'EOF' > index.html
                     </div>
                 </div>
 
+                <!-- My Numbers -->
                 <div class="glass rounded-2xl p-8 mb-8">
                     <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Mis Números</h3>
                     <div id="my-numbers-list" class="grid grid-cols-6 md:grid-cols-12 gap-3">
+                        <!-- Numbers will be populated by JavaScript -->
                     </div>
                 </div>
 
+                <!-- Transaction History -->
                 <div class="glass rounded-2xl p-8">
                     <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Historial de Transacciones</h3>
                     <div id="transaction-history" class="space-y-4">
+                        <!-- Transactions will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER CON LICENCIAS Y CERTIFICACIONES -->
     <footer class="bg-gray-900 dark:bg-black text-white py-16">
         <div class="container mx-auto px-4">
+            <!-- SELLOS DE CONFIANZA Y LICENCIAS -->
             <div class="mb-12">
                 <h3 class="text-2xl font-bold text-center mb-8 text-yellow-400">🏆 Licenciado y Certificado</h3>
                 
@@ -631,6 +993,7 @@ cat << 'EOF' > index.html
         </div>
     </footer>
 
+    <!-- Login/Register Modal -->
     <div id="auth-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md mx-4 animate-scale-up">
             <div class="p-8">
@@ -641,6 +1004,7 @@ cat << 'EOF' > index.html
                     <h3 class="text-2xl font-bold text-gray-800 dark:text-white" id="auth-title">Iniciar Sesión</h3>
                 </div>
 
+                <!-- Login Form -->
                 <form id="login-form" class="space-y-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
@@ -655,6 +1019,7 @@ cat << 'EOF' > index.html
                     </button>
                 </form>
 
+                <!-- Register Form -->
                 <form id="register-form" class="space-y-6 hidden">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nombre</label>
@@ -673,12 +1038,14 @@ cat << 'EOF' > index.html
                     </button>
                 </form>
 
+                <!-- Toggle between login/register -->
                 <div class="mt-6 text-center">
                     <button id="toggle-auth" class="text-yellow-600 hover:text-yellow-500 font-medium">
                         ¿No tienes cuenta? Regístrate
                     </button>
                 </div>
 
+                <!-- Close button -->
                 <button id="close-auth-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -688,6 +1055,7 @@ cat << 'EOF' > index.html
         </div>
     </div>
 
+    <!-- Purchase Modal -->
     <div id="purchase-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] overflow-hidden animate-scale-up">
             <div class="p-8">
@@ -701,6 +1069,7 @@ cat << 'EOF' > index.html
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Number Selection -->
                     <div>
                         <div class="mb-6">
                             <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Seleccionar Números</h4>
@@ -717,13 +1086,16 @@ cat << 'EOF' > index.html
                             </div>
                         </div>
 
+                        <!-- Selected Numbers -->
                         <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-6">
                             <h5 class="font-bold text-gray-800 dark:text-white mb-3">Números Seleccionados</h5>
                             <div id="selected-numbers" class="grid grid-cols-6 gap-2 min-h-[100px]">
+                                <!-- Selected numbers will appear here -->
                             </div>
                         </div>
                     </div>
 
+                    <!-- Cart Summary -->
                     <div>
                         <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900 dark:to-yellow-800 rounded-lg p-6">
                             <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-6">Resumen de Compra</h4>
@@ -766,6 +1138,7 @@ cat << 'EOF' > index.html
         </div>
     </div>
 
+    <!-- Success Modal -->
     <div id="success-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md mx-4 animate-scale-up">
             <div class="p-8 text-center">
@@ -784,12 +1157,14 @@ cat << 'EOF' > index.html
     </div>
 
     <script>
+        // Database simulation using memory (no localStorage)
         class GameDatabase {
             constructor() {
                 this.init();
             }
 
             init() {
+                // Initialize global data in memory
                 this.gameData = {
                     soldNumbers: 487523,
                     totalSold: 487523,
@@ -835,7 +1210,7 @@ cat << 'EOF' > index.html
                     name,
                     email,
                     password,
-                    balance: 100,
+                    balance: 100, // Starting bonus
                     purchasedNumbers: [],
                     transactions: [{
                         type: 'bonus',
@@ -867,17 +1242,21 @@ cat << 'EOF' > index.html
                     return { success: false, message: 'Saldo insuficiente' };
                 }
 
+                // Check if any numbers are already taken
                 const unavailable = numbers.filter(num => data.purchasedNumbers.has(num));
                 if (unavailable.length > 0) {
                     return { success: false, message: `Números no disponibles: ${unavailable.join(', ')}` };
                 }
 
+                // Purchase numbers
                 user.balance -= cost;
                 user.purchasedNumbers.push(...numbers);
                 
+                // Add to global purchased numbers
                 numbers.forEach(num => data.purchasedNumbers.add(num));
                 data.soldNumbers += numbers.length;
 
+                // Add transaction
                 user.transactions.push({
                     type: 'purchase',
                     amount: -cost,
@@ -925,8 +1304,10 @@ cat << 'EOF' > index.html
             }
         }
 
+        // Initialize database
         const db = new GameDatabase();
 
+        // UI Management
         class UIManager {
             constructor() {
                 this.selectedNumbers = [];
@@ -937,25 +1318,32 @@ cat << 'EOF' > index.html
                 this.setupEventListeners();
                 this.updateUI();
                 this.checkUserSession();
+                this.createCasinoEffects();
             }
 
             setupEventListeners() {
+                // Theme toggle
                 document.getElementById('theme-toggle').addEventListener('click', () => {
                     document.documentElement.classList.toggle('dark');
                 });
 
+                // Auth modal
                 document.getElementById('login-btn').addEventListener('click', () => this.showAuthModal());
                 document.getElementById('close-auth-modal').addEventListener('click', () => this.hideAuthModal());
                 document.getElementById('toggle-auth').addEventListener('click', () => this.toggleAuthMode());
                 
+                // Auth forms
                 document.getElementById('login-form').addEventListener('submit', (e) => this.handleLogin(e));
                 document.getElementById('register-form').addEventListener('submit', (e) => this.handleRegister(e));
 
+                // Logout
                 document.getElementById('logout-btn').addEventListener('click', () => this.handleLogout());
 
+                // Purchase modal
                 document.getElementById('buy-numbers-btn').addEventListener('click', () => this.showPurchaseModal());
                 document.getElementById('close-purchase-modal').addEventListener('click', () => this.hidePurchaseModal());
 
+                // Number selection
                 document.getElementById('add-number-btn').addEventListener('click', () => this.addNumber());
                 document.getElementById('number-input').addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') {
@@ -964,20 +1352,25 @@ cat << 'EOF' > index.html
                     }
                 });
 
+                // Random number buttons
                 document.getElementById('random-1-btn').addEventListener('click', () => this.addRandomNumbers(1));
                 document.getElementById('random-5-btn').addEventListener('click', () => this.addRandomNumbers(5));
                 document.getElementById('random-10-btn').addEventListener('click', () => this.addRandomNumbers(10));
 
+                // Purchase actions
                 document.getElementById('add-funds-btn').addEventListener('click', () => this.addFunds());
                 document.getElementById('confirm-purchase-btn').addEventListener('click', () => this.confirmPurchase());
 
+                // Navigation
                 document.getElementById('dashboard-link').addEventListener('click', (e) => {
                     e.preventDefault();
                     this.showDashboard();
                 });
 
+                // Success modal
                 document.getElementById('close-success-modal').addEventListener('click', () => this.hideSuccessModal());
 
+                // Navigation links
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', (e) => {
                         if (link.getAttribute('href').startsWith('#')) {
@@ -1028,11 +1421,13 @@ cat << 'EOF' > index.html
                 const toggleBtn = document.getElementById('toggle-auth');
 
                 if (loginForm.classList.contains('hidden')) {
+                    // Show login form
                     loginForm.classList.remove('hidden');
                     registerForm.classList.add('hidden');
                     title.textContent = 'Iniciar Sesión';
                     toggleBtn.textContent = '¿No tienes cuenta? Regístrate';
                 } else {
+                    // Show register form
                     loginForm.classList.add('hidden');
                     registerForm.classList.remove('hidden');
                     title.textContent = 'Crear Cuenta';
@@ -1050,6 +1445,7 @@ cat << 'EOF' > index.html
                     this.showUserMenu(user);
                     this.hideAuthModal();
                     this.showCustomAlert('¡Bienvenido de vuelta!', 'success');
+                    this.triggerCelebration();
                 } else {
                     this.showCustomAlert('Email o contraseña incorrectos', 'error');
                 }
@@ -1066,6 +1462,7 @@ cat << 'EOF' > index.html
                     this.showUserMenu(result.user);
                     this.hideAuthModal();
                     this.showCustomAlert('¡Cuenta creada exitosamente! Te hemos dado $100 de bono de bienvenida.', 'success');
+                    this.triggerCelebration();
                 } else {
                     this.showCustomAlert(result.message, 'error');
                 }
@@ -1143,6 +1540,7 @@ cat << 'EOF' > index.html
             updatePurchaseModal() {
                 const user = db.getCurrentUser();
                 
+                // Update selected numbers display
                 const container = document.getElementById('selected-numbers');
                 container.innerHTML = '';
                 
@@ -1157,10 +1555,12 @@ cat << 'EOF' > index.html
                     container.appendChild(div);
                 });
 
+                // Update cart summary
                 document.getElementById('cart-count').textContent = this.selectedNumbers.length;
                 document.getElementById('cart-total').textContent = `$${this.selectedNumbers.length}.00`;
                 document.getElementById('modal-balance').textContent = `$${user ? user.balance : 0}`;
 
+                // Update purchase button
                 const purchaseBtn = document.getElementById('confirm-purchase-btn');
                 const canPurchase = user && this.selectedNumbers.length > 0 && user.balance >= this.selectedNumbers.length;
                 purchaseBtn.disabled = !canPurchase;
@@ -1183,6 +1583,7 @@ cat << 'EOF' > index.html
                     this.showUserMenu(user);
                     this.updatePurchaseModal();
                     this.showCustomAlert(`¡Se agregaron $${amount} a tu cuenta!`, 'success');
+                    this.createMoneyRain();
                 }
             }
 
@@ -1200,9 +1601,13 @@ cat << 'EOF' > index.html
                     this.hidePurchaseModal();
                     this.showSuccessModal(`¡Has comprado ${count} número${count > 1 ? 's' : ''} por $${total}!`);
                     
+                    // Update UI
                     const user = db.getCurrentUser();
                     this.showUserMenu(user);
                     this.updateStats();
+                    
+                    // Casino effects
+                    this.triggerPurchaseCelebration();
                     
                     this.selectedNumbers = [];
                 } else {
@@ -1229,8 +1634,11 @@ cat << 'EOF' > index.html
                     return;
                 }
 
+                // Hide other sections
                 document.getElementById('home').style.display = 'none';
                 document.getElementById('how-it-works').style.display = 'none';
+                
+                // Show dashboard
                 document.getElementById('dashboard').classList.remove('hidden');
                 
                 this.updateDashboard();
@@ -1246,11 +1654,13 @@ cat << 'EOF' > index.html
                 const user = db.getCurrentUser();
                 if (!user) return;
 
+                // Update dashboard stats
                 document.getElementById('dashboard-numbers-owned').textContent = user.purchasedNumbers.length;
                 document.getElementById('dashboard-balance').textContent = `$${user.balance}`;
                 document.getElementById('dashboard-total-spent').textContent = `$${user.purchasedNumbers.length}`;
                 document.getElementById('dashboard-potential-win').textContent = user.purchasedNumbers.length > 0 ? '$800,000' : '$0';
 
+                // Update my numbers
                 const numbersContainer = document.getElementById('my-numbers-list');
                 numbersContainer.innerHTML = '';
                 
@@ -1259,12 +1669,14 @@ cat << 'EOF' > index.html
                 } else {
                     user.purchasedNumbers.forEach(number => {
                         const div = document.createElement('div');
-                        div.className = 'bg-yellow-500 text-white rounded-lg p-3 text-center font-bold';
+                        div.className = 'bg-yellow-500 text-white rounded-lg p-3 text-center font-bold hover:scale-105 transition-transform cursor-pointer';
                         div.textContent = number;
+                        div.addEventListener('click', () => this.showCustomAlert(`Número ${number} - Comprado exitosamente`, 'info'));
                         numbersContainer.appendChild(div);
                     });
                 }
 
+                // Update transaction history
                 const historyContainer = document.getElementById('transaction-history');
                 historyContainer.innerHTML = '';
                 
@@ -1273,7 +1685,7 @@ cat << 'EOF' > index.html
                 } else {
                     user.transactions.slice().reverse().forEach(transaction => {
                         const div = document.createElement('div');
-                        div.className = 'flex justify-between items-center p-4 bg-white dark:bg-gray-700 rounded-lg';
+                        div.className = 'flex justify-between items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:scale-102 transition-transform';
                         
                         const date = new Date(transaction.date).toLocaleDateString();
                         const amountClass = transaction.amount > 0 ? 'text-green-600' : 'text-red-600';
@@ -1314,6 +1726,7 @@ cat << 'EOF' > index.html
             updateUI() {
                 this.updateStats();
                 
+                // Auto-update counter
                 setInterval(() => {
                     const data = db.getGameData();
                     const newValue = data.soldNumbers + Math.floor(Math.random() * 10) + 1;
@@ -1321,6 +1734,121 @@ cat << 'EOF' > index.html
                     db.saveGameData(data);
                     this.updateStats();
                 }, 3000);
+            }
+
+            // Casino Effects
+            createCasinoEffects() {
+                // Periodic background effects
+                setInterval(() => {
+                    if (Math.random() < 0.3) {
+                        this.createDiamondSparkles();
+                    }
+                }, 5000);
+
+                setInterval(() => {
+                    if (Math.random() < 0.2) {
+                        this.createCoinRain();
+                    }
+                }, 8000);
+            }
+
+            createMoneyRain() {
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        const money = document.createElement('div');
+                        money.className = 'money-bill';
+                        money.style.left = Math.random() * 100 + 'vw';
+                        money.style.animationDelay = Math.random() * 2 + 's';
+                        money.textContent = ['💵', '💴', '💶', '💷'][Math.floor(Math.random() * 4)];
+                        money.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                        document.body.appendChild(money);
+                        
+                        setTimeout(() => {
+                            money.remove();
+                        }, 8000);
+                    }, i * 200);
+                }
+            }
+
+            createDiamondSparkles() {
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const diamond = document.createElement('div');
+                        diamond.className = 'diamond-sparkle';
+                        diamond.style.left = Math.random() * 100 + 'vw';
+                        diamond.style.top = Math.random() * 100 + 'vh';
+                        diamond.style.animationDelay = Math.random() * 3 + 's';
+                        diamond.textContent = ['💎', '✨', '⭐', '🌟'][Math.floor(Math.random() * 4)];
+                        diamond.style.fontSize = (Math.random() * 15 + 20) + 'px';
+                        document.body.appendChild(diamond);
+                        
+                        setTimeout(() => {
+                            diamond.remove();
+                        }, 3000);
+                    }, i * 150);
+                }
+            }
+
+            createCoinRain() {
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        const coin = document.createElement('div');
+                        coin.className = 'coin';
+                        coin.style.left = Math.random() * 100 + 'vw';
+                        coin.style.animationDelay = Math.random() * 1 + 's';
+                        coin.textContent = '🪙';
+                        document.body.appendChild(coin);
+                        
+                        setTimeout(() => {
+                            coin.remove();
+                        }, 3000);
+                    }, i * 100);
+                }
+            }
+
+            createFireworks() {
+                for (let i = 0; i < 8; i++) {
+                    setTimeout(() => {
+                        const firework = document.createElement('div');
+                        firework.className = 'firework';
+                        firework.style.left = Math.random() * 80 + 10 + 'vw';
+                        firework.style.top = Math.random() * 60 + 20 + 'vh';
+                        document.body.appendChild(firework);
+                        
+                        setTimeout(() => {
+                            firework.remove();
+                        }, 1000);
+                    }, i * 200);
+                }
+            }
+
+            createConfetti() {
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.style.left = Math.random() * 100 + 'vw';
+                        confetti.style.background = ['#FFD700', '#FFA500', '#FF6B6B', '#4ECDC4', '#45B7D1'][Math.floor(Math.random() * 5)];
+                        confetti.style.animationDelay = Math.random() * 3 + 's';
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 3000);
+                    }, i * 50);
+                }
+            }
+
+            triggerCelebration() {
+                this.createConfetti();
+                this.createDiamondSparkles();
+                this.createFireworks();
+            }
+
+            triggerPurchaseCelebration() {
+                this.createMoneyRain();
+                this.createCoinRain();
+                this.createConfetti();
             }
 
             showCustomAlert(message, type = 'info') {
@@ -1363,7 +1891,9 @@ cat << 'EOF' > index.html
             }
         }
 
+        // Initialize app
         document.addEventListener('DOMContentLoaded', () => {
+            // Dark mode detection
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.documentElement.classList.add('dark');
             }
@@ -1376,6 +1906,7 @@ cat << 'EOF' > index.html
                 }
             });
 
+            // Initialize UI
             new UIManager();
         });
     </script>
